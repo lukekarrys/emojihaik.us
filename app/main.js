@@ -63,13 +63,13 @@ function getEmoji() {
 
 function setDom(opts) {
     $('haiku').innerHTML = opts.images;
-    $('copy').setAttribute('data-text', opts.share.copy);
+    $('copy').setAttribute('data-text', encodeURIComponent(opts.share.copy));
     $('haikuText').innerHTML = opts.text;
     $('tweetButton').setAttribute('href', opts.share.twitter);
 }
 
 function copyit() {
-    window.prompt('Copy to clipboard: Ctrl+C, Enter', this.getAttribute('data-text'));
+    window.prompt('Copy to clipboard: Ctrl+C, Enter', decodeURIComponent(this.getAttribute('data-text')));
 }
 
 function doit() {

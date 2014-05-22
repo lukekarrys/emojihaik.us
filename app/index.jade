@@ -22,10 +22,12 @@ html(lang="en")
 
   body
     #bg
-    header
-      h1#title
-        span#haikuText
-    #haiku
+    .content
+        .centered
+            header
+              h1#title
+                span#haikuText
+            #haiku
     .actions
       a#tweetButton(target="_blank", href="#") Tweet It
       button#copy(type="button", data-text="") Copy

@@ -23,17 +23,28 @@ body {
   background-size: 900px;
   background-position: 50% 50%;
 }
-#haiku {
-  position: absolute;
-  z-index: 2;
-  top: 40%;
-  left: 50%;
-  width: 90%;
-  margin-left: -45%;
+.content {
+  height: 85%;
   text-align: center;
 }
+.content:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 90%;
+}
+#haiku {
+  text-align: center;
+  margin-top: 20px;
+}
 #haiku img {
-  margin: 0 15px;
+  margin: 0 5px;
 }
 #haiku img:first-child {
   margin-left: 0;
@@ -41,13 +52,13 @@ body {
 .actions {
   position: absolute;
   z-index: 2;
-  bottom: 20%;
+  bottom: 10%;
   left: 50%;
   width: 90%;
   margin-left: -45%;
   text-align: center;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .actions {
     bottom: 75px;
   }
@@ -71,26 +82,21 @@ body {
   user-select: none;
   background: #000;
   color: #fff;
-  font-family: 'Quicksand', 'sans-serif';
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
   margin: 0 5px;
   text-decoration: none;
+  margin-bottom: 5px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .actions a,
   .actions button {
     font-size: 14px;
   }
 }
 header {
-  position: absolute;
-  z-index: 2;
-  top: 5%;
-  left: 50%;
-  width: 90%;
-  margin-left: -45%;
   text-align: center;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   header {
     top: 20px;
   }
@@ -100,7 +106,7 @@ header {
   font-size: 4em;
   line-height: 1.2em;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #title {
     font-size: 2em;
   }
@@ -116,7 +122,7 @@ footer {
   color: #ccc;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   footer {
     bottom: 10px;
   }
