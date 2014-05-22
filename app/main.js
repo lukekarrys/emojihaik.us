@@ -8,7 +8,7 @@ var domready = require('domready');
 var share = require('../lib/share');
 var addEvent = require('../lib/event');
 var attachFastClick = require('fastclick');
-var shareTextTmpl =  _.template('{{ text }}\n{{ characters }}');
+var shareTextTmpl =  _.template('{{ text }}\n\n{{ characters }}');
 var $ = function (id) { return document.querySelector('#' + id); };
 var ondeck = null;
 
