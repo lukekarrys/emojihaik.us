@@ -27,6 +27,11 @@ body {
   height: 85%;
   text-align: center;
 }
+@media only screen and (max-width: 768px) {
+  .content {
+    height: 75%;
+  }
+}
 .content:before {
   content: '';
   display: inline-block;
@@ -49,6 +54,12 @@ body {
 #haiku img:first-child {
   margin-left: 0;
 }
+@media only screen and (max-width: 768px) {
+  #haiku img {
+    margin: 0;
+    height: 48px;
+  }
+}
 .actions {
   position: absolute;
   z-index: 2;
@@ -60,7 +71,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .actions {
-    bottom: 75px;
+    bottom: 45px;
   }
 }
 .actions a,
@@ -83,7 +94,7 @@ body {
   background: #000;
   color: #fff;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
-  margin: 0 5px;
+  margin: 0 2.5px;
   text-decoration: none;
   margin-bottom: 5px;
 }
@@ -108,7 +119,7 @@ header {
 }
 @media only screen and (max-width: 768px) {
   #title {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 footer {
