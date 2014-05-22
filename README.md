@@ -1,6 +1,6 @@
-emoji-fortune
+emojihaik.us
 =============
 
-**Your emoji fortune!**
+**Your emoji haiku!**
 
-This is the code that powers [emojifortun.es](http://emojifortun.es).
+This is the code that powers [emojihaik.us](http://emojihaik.us).

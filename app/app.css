@@ -21,39 +21,22 @@ body {
   -webkit-background-size: 900px;
   -moz-background-size: 900px;
   background-size: 900px;
-  background-image: url(/bg-web.jpg);
   background-position: 50% 50%;
-  background-position: -webkit-calc(50% - 26px) -webkit-calc(50% - 26px);
-  background-position: -moz-calc(50% - 26px) -moz-calc(50% - 26px);
-  background-position: calc(50% - 26px) -calc(50% - 26px);
 }
-#fortune {
+#haiku {
   position: absolute;
   z-index: 2;
-  top: 50%;
-  -lh-property: 0;
-top:-webkit-calc(50% - 26px);
-top:-moz-calc(50% - 26px);
-top:calc(50% - 26px);
-;
+  top: 40%;
   left: 50%;
-  width: 100%;
+  width: 90%;
+  margin-left: -45%;
+  text-align: center;
 }
-#fortune span {
-  position: absolute;
-  left: -141px;
-  top: -18px;
-  -webkit-transform: rotate(-12deg);
-  -moz-transform: rotate(-12deg);
-  -o-transform: rotate(-12deg);
-  -ms-transform: rotate(-12deg);
-  transform: rotate(-12deg);
-}
-#fortune img {
+#haiku img {
   margin: 0 15px;
 }
-#fortuneText {
-  text-transform: uppercase;
+#haiku img:first-child {
+  margin-left: 0;
 }
 .actions {
   position: absolute;
@@ -88,7 +71,7 @@ top:calc(50% - 26px);
   user-select: none;
   background: #000;
   color: #fff;
-  font-family: 'Oswald', 'sans-serif';
+  font-family: 'Quicksand', 'sans-serif';
   margin: 0 5px;
   text-decoration: none;
 }
@@ -105,6 +88,7 @@ header {
   left: 50%;
   width: 90%;
   margin-left: -45%;
+  text-align: center;
 }
 @media only screen and (max-width: 600px) {
   header {
@@ -112,8 +96,7 @@ header {
   }
 }
 #title {
-  font-family: 'Oswald', 'sans-serif';
-  text-align: center;
+  font-family: 'Quicksand', 'sans-serif';
   font-size: 4em;
   line-height: 1.2em;
 }

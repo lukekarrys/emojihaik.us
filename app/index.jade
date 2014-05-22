@@ -3,20 +3,20 @@ html(lang="en")
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    title Emoji Fortunes
-    meta(name="description", content="Get your emoji fortune")
+    title Emoji Haikus
+    meta(name="description", content="Get your emoji haiku")
     meta(name="author", content="Luke Karrys")
 
     meta(name="viewport", content="width=device-width,initial-scale=1.0,maximum-scale=1.0")
     meta(name='apple-mobile-web-app-capable', content='yes')
     meta(name='apple-mobile-web-app-status-bar-style', content='black')
-    meta(name='apple-mobile-web-app-title', content='EmojiFortun.es')
+    meta(name='apple-mobile-web-app-title', content='Emoji Haikus')
 
     link(rel='apple-touch-icon-precomposed', href='/ios.png', sizes='152x152')
     link(rel='shortcut icon', href='/favicon.ico')
     link(rel='icon', href='/favicon.ico')
 
-    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Oswald:700,400')
+    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Quicksand:400,700')
     link(rel='stylesheet', type='text/css', href=locals.resourcePrefix + locals.cssFileName)
     script(src=locals.resourcePrefix + locals.jsFileName)
 
@@ -24,8 +24,8 @@ html(lang="en")
     #bg
     header
       h1#title
-        span#fortuneText
-    #fortune
+        span#haikuText
+    #haiku
     .actions
       a#tweetButton(target="_blank", href="#") Tweet It
       button#copy(type="button", data-text="") Copy
@@ -35,12 +35,14 @@ html(lang="en")
         | Made by 
         a(href="https://twitter.com/lukekarrys", target="_blank") @lukekarrys
         br
-        | because of 
-        a(href="https://twitter.com/nrrrdcore/status/453983082618839040", target="_blank") this tweet
+        | using 
+        a(href="https://twitter.com/quitlahok", target="_blank") @nlf's
+        | 
+        a(href="https://github.com/lukekarrys/emoji-fortune/pull/2", target="_blank") haiku code
     script.
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-8402584-13', 'emojifortun.es');
+        ga('create', 'UA-XXXXXXXXX', 'emojihaik.us');
         ga('send', 'pageview');

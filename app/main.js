@@ -8,7 +8,7 @@ var domready = require('domready');
 var share = require('../lib/share');
 var addEvent = require('../lib/event');
 var attachFastClick = require('fastclick');
-var shareTextTmpl =  _.template('My emoji fortune is {{ characters }} ({{ text }}) —');
+var shareTextTmpl =  _.template('{{ text }}\n{{ characters }}');
 var $ = function (id) { return document.querySelector('#' + id); };
 var ondeck = null;
 
@@ -19,28 +19,52 @@ function preload(images) {
     });
 }
 
+function byLine(lines, prop) {
+    return _.map(lines, function (line) {
+        return _.pluck(line, prop);
+    });
+}
+
+function joinAndReplace(join, find, fn) {
+    return function (item) {
+        item = item.join(join);
+        if (find) {
+            item = item.replace(find, join);
+        }
+        if (fn) {
+            item = fn(item);
+        }
+        return item;
+    };
+}
+
+function sentenceCase(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 function getEmoji() {
-    var emoji = Emoji.random({
-        count: 3,
+    var haiku = Emoji.haiku({
         host: host,
         height: size
     });
-    preload(_.pluck(emoji, 'imageSrc'));
-    var names = _.pluck(emoji, 'name');
-    var text = names.join(' ').replace(/_/g, ' ');
-    var characters = _.pluck(emoji, 'character').join(' ');
-    var shareText = shareTextTmpl({text: text, characters: characters});
+
+    preload(_.pluck(_.flatten(haiku, true), 'imageSrc'));
+
+    var text = byLine(haiku, 'name').map(joinAndReplace(' ', /_/g, sentenceCase));
+    var images = '<span>' + byLine(haiku, 'image').map(joinAndReplace('')).join('</span><br><span>') + '</span>';
+    var characters = byLine(haiku, 'character').map(joinAndReplace(' ')).join('\n');
+    var shareText = shareTextTmpl({text: text.join('\n'), characters: characters});
     return {
-        images: '<span>' + _.pluck(emoji, 'image').join('') + '</span>',
+        images: '<span>' + images + '</span>',
         share: share(shareText),
-        text: text
+        text: text.join('<br>')
     };
 }
 
 function setDom(opts) {
-    $('fortune').innerHTML = opts.images;
+    $('haiku').innerHTML = opts.images;
     $('copy').setAttribute('data-text', opts.share.copy);
-    $('fortuneText').innerHTML = opts.text;
+    $('haikuText').innerHTML = opts.text;
     $('tweetButton').setAttribute('href', opts.share.twitter);
 }
 

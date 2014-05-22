@@ -1,10 +1,10 @@
 {
-  "name": "emoji-fortune",
-  "description": "Your emoji fortune!",
+  "name": "emojihaik.us",
+  "description": "Your emoji haiku!",
   "version": "0.0.0",
   "author": "Luke Karrys <luke@lukekarrys.com>",
   "bugs": {
-    "url": "https://github.com/lukekarrys/emoji-fortune/issues"
+    "url": "https://github.com/lukekarrys/emojihaik.us/issues"
   },
   "dependencies": {
     "domready": "^1.0.5",
@@ -22,17 +22,17 @@
     "moonboots-static": "0.0.4",
     "precommit-hook": "^1.0.2"
   },
-  "homepage": "https://github.com/lukekarrys/emoji-fortune",
+  "homepage": "https://github.com/lukekarrys/emojihaik.us",
   "keywords": [
     "emoji",
-    "fortune",
-    "cookie"
+    "haiku"
   ],
+  "private": true,
   "license": "MIT",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:lukekarrys/emoji-fortune.git"
+    "url": "git@github.com:lukekarrys/emojihaik.us.git"
   },
   "scripts": {
     "build": "node server --build",
