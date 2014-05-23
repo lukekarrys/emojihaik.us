@@ -8,8 +8,9 @@
   },
   "dependencies": {
     "domready": "^1.0.5",
+    "emoji-named-characters": "^0.2.1",
     "fastclick": "^1.0.1",
-    "random-emoji": "^0.1.1",
+    "random-emoji": "^0.1.2",
     "underscore": "^1.6.0",
     "zepto-detect": "0.0.0"
   },
@@ -27,9 +28,9 @@
     "emoji",
     "haiku"
   ],
-  "private": true,
   "license": "MIT",
   "main": "server.js",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:lukekarrys/emojihaik.us.git"
