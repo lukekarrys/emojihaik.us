@@ -21,7 +21,9 @@ function preload(images) {
 
 function byLine(lines, prop) {
     return _.map(lines, function (line) {
-        return _.pluck(line, prop);
+        return _.map(line, function (emoji) {
+            return typeof prop === 'string' ? emoji[prop] : prop(emoji);
+        });
     });
 }
 
@@ -51,7 +53,12 @@ function getEmoji() {
     preload(_.pluck(_.flatten(haiku, true), 'imageSrc'));
 
     var text = byLine(haiku, 'name').map(joinAndReplace(' ', /_/g, sentenceCase));
-    var images = '<span>' + byLine(haiku, 'image').map(joinAndReplace('')).join('</span><br><span>') + '</span>';
+    var images = byLine(haiku, function (emoji) {
+            var url = 'http://emojipedia.org/' + emoji.name.replace(/_/g, '-').toLowerCase() + '/';
+            return '<a href="' + url + '" target="_blank">' + emoji.image + '</a>';
+        })
+        .map(joinAndReplace(''))
+        .join('</span><br><span>');
     var characters = byLine(haiku, 'character').map(joinAndReplace(' ')).join('\n');
     var shareText = shareTextTmpl({text: text.join('\n'), characters: characters});
     return {
