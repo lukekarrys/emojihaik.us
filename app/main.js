@@ -54,7 +54,7 @@ function getEmoji() {
 
     var text = byLine(haiku, 'name').map(joinAndReplace(' ', /_/g, sentenceCase));
     var images = byLine(haiku, function (emoji) {
-            var url = 'http://emojipedia.org/' + emoji.name.replace(/_/g, '-').toLowerCase() + '/';
+            var url = 'http://emojipedia.org/' + emoji.character;
             return '<a href="' + url + '" target="_blank">' + emoji.image + '</a>';
         })
         .map(joinAndReplace(''))
