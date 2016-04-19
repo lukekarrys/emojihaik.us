@@ -19,3 +19,4 @@ This is the code that powers [emojihaik.us](http://emojihaik.us).
 
 * `npm run build`
 * `npm run deploy`
+
