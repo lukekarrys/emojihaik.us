@@ -19,14 +19,14 @@
     "git-directory-deploy": "^1.5.1",
     "jade": "^1.11.0",
     "jshint": "^2.9.3",
+    "json": "^9.0.4",
     "lessitizer": "2.1.0",
     "moonboots-express": "^3.0.0",
     "moonboots-static": "2.0.1",
     "precommit-hook": "^3.0.0"
   },
   "engines": {
-    "node": "^5.0.0",
-    "npm": "^3.0.0"
+    "node": "^6.0.0"
   },
   "homepage": "https://github.com/lukekarrys/emojihaik.us",
   "keywords": [
@@ -46,12 +46,11 @@
   },
   "scripts": {
     "build": "npm run emojis && node server --build",
-    "codeship-setup": "npm run npm-version && npm install && npm run build",
+    "codeship-setup": "npm install && npm run build",
     "codeship-test": "npm run lint && npm run validate",
-    "deploy": "git-directory-deploy --directory _site --username lukekarrys --email lukekarrys@gmail.com --repo `cat package.json | jq -r '.repository.url'` --message='--skip-ci'",
+    "deploy": "git-directory-deploy --directory _site --username lukekarrys --email lukekarrys@gmail.com --repo `cat package.json | json repository.url` --message='--skip-ci'",
     "emojis": "rm -rf public/emojis && mkdir -p public/emojis && cp ./node_modules/emoji-named-characters/pngs/*.png ./public/emojis",
     "lint": "jshint .",
-    "npm-version": "npm install -g npm@`cat package.json | jq -r '.engines.npm'`",
     "start": "npm run emojis && node server --dev",
     "validate": "npm ls >/dev/null"
   }
