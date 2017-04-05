@@ -23,7 +23,7 @@
     "lessitizer": "3.0.0",
     "moonboots-express": "^3.0.0",
     "moonboots-static": "2.0.1",
-    "standard": "^9.0.0"
+    "standard": "^10.0.0"
   },
   "engines": {
     "node": "^6.0.0"
