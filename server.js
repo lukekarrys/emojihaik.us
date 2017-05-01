@@ -33,7 +33,7 @@ if (buildMode) {
     htmlSource: function (context) {
       return html(context)
     },
-    directory: path.join(__dirname, '_site'),
+    directory: path.join(__dirname, 'build'),
     public: path.join(__dirname, 'public'),
     cb: function (err) {
       console.log(err || 'Built!')

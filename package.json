@@ -49,7 +49,7 @@
     "build": "npm run emojis && node server --build",
     "codeship-setup": "npm install && npm run build",
     "codeship-test": "npm run lint && npm run validate",
-    "deploy": "git-directory-deploy --directory _site --username lukekarrys --email lukekarrys@gmail.com --repo `cat package.json | json repository.url` --message='--skip-ci'",
+    "deploy": "git-directory-deploy --directory build --username lukekarrys --email lukekarrys@gmail.com --repo `cat package.json | json repository.url` --message='--skip-ci'",
     "emojis": "rm -rf public/emojis && mkdir -p public/emojis && cp ./node_modules/emoji-named-characters/pngs/*.png ./public/emojis",
     "lint": "standard",
     "start": "npm run emojis && node server --dev",
